@@ -56,15 +56,16 @@
     <%- partial('post/nav') %>
   <% } %>
 
+  <% if (!index && theme.share.on && (post.share != false || post.share)){ %>
+    <%- partial('post/share') %>
+  <% } %>
+
   <% if (!index && theme.donate && post.donate!=false){ %>
 	  <%- partial('donate') %>
   <% } %>
+
 </article>
 <%- partial('_partial/toc') %>
-
-<% if (!index && theme.share.on && (post.share != false || post.share)){ %>
-    <%- partial('post/share') %>
-<% } %>
 
 <% if (!index && post.comments){ %>
     <% if (theme.duoshuo.on) { %>
